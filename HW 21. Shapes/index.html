@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrapper {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .figure {
+        background: #000;
+        height: 150px;
+        margin-bottom: 30px;
+      }
+      .square {
+        width: 150px;
+      }
+      .rectangle {
+        width: 250px;
+      }
+      .circle {
+        width: 150px;
+        border-radius: 50%;
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 55px;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="figure square"></div>
+      <form class="form">
+        <select class="select" id="selectShape">
+          <option value="square">Square</option>
+          <option value="rectangle">Rectangle</option>
+          <option value="circle">Circle</option>
+        </select>
+        <input class="input" type="color" id="inputColor" />
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
