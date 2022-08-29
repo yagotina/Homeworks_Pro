@@ -5,9 +5,25 @@ const usersBlock = document.getElementById('users');
 
 const API = 'https://api.github.com/users/';
 
-function controller(path) {
-    let URL = API + path;
-    return fetch(URL);
+function renderError(error) {
+    searchError.innerText = error;
+    searchError.classList.add('visible');
+};
+
+async function controller(username) {
+    let URL = API + username;
+
+    try {
+        let response = await fetch(URL);
+
+        if(response.ok) {
+            return await response.json();
+        } else {
+            await Promise.reject(`User "${username}" does not exist! Please, try again.`);
+        };
+    } catch (error) {
+        renderError(error);
+    };
 };
 
 function createCard(user, username) {
@@ -61,26 +77,21 @@ function createCard(user, username) {
     userLink.append(userAvatar);
 };
 
-async function renderCard(response, username) {
-    let user = await response.json();
+function renderCard(user, username) {
     let userId = document.getElementById(username);
 
+    //если такой юзер уже есть в результатах поиска, то он переместится в начало списка результатов
     if(userId) userId.remove(); 
     createCard(user, username);
 
     searchError.classList.remove('visible');
 };
 
-function renderError(username) {
-    searchError.innerText = `User "${username}" does not exist! Please, try again.`
-    searchError.classList.add('visible');
-};
-
 searchForm.addEventListener('submit', async function(e) {
     e.preventDefault();
 
     let username = searchField.value.toLowerCase().replaceAll(' ', '');
-    let response = await controller(username);
+    let user = await controller(username);
 
-    response.ok ? renderCard(response, username) : renderError(username);
+    if(user) renderCard(user, username);
 });
