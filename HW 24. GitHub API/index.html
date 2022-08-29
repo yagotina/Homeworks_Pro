@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>GitHub User Search</title>
+</head>
+<body>
+    <div class="wrapper">
+        <main class="main">
+            <div class="container">
+                <h1 class="main__title">GitHub User Search</h1>
+                <form class="search-form" id="searchForm">
+                    <input class="search-form__input" id="searchField" type="search" placeholder="username">
+                    <input class="search-form__btn" type="submit" value="Search">
+                </form>
+                <p class="search-error" id="searchError">Error</p>
+                <div class="users" id="users">
+                    <!-- <div class="users_card user">
+                        <a class="user__link" href="https://github.com/yagotina" target="_blank">
+                            <img class="user__avatar" src="https://avatars.githubusercontent.com/u/98537579?v=4" alt="username">
+                        </a>
+                        <ul class="user__info">
+                            <li>Krystyna Yahotina</li>
+                            <li>Repositories: 19</li>
+                            <li>Followers: 243</li>
+                            <li>Following: 128</li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
