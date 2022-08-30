@@ -31,33 +31,23 @@ function createCard(user, username) {
     const userLink = document.createElement('a');
     const userAvatar = document.createElement('img');
     const userInfo = document.createElement('ul');
-    
-    const USER_INFO = [
-        {
-            name: user.name,
-        },
-        {
-            name: 'Repositories',
-            num: user.public_repos,
-        },
-        {
-            name: 'Followers',
-            num: user.followers,
-        },
-        {
-            name: 'Following',
-            num: user.following,
-        },
-    ];
 
-    USER_INFO.forEach(info => {
+    const USER_INFO = {
+        name: user.name,
+        Repositories: user.public_repos,
+        Followers: user.followers,
+        Following: user.following,
+    };
+
+    for(let key in USER_INFO) {
         const infoItem = document.createElement('li');
 
-        infoItem.innerText = 'num' in info ? 
-        `${info.name}: ${info.num}` : `${info.name || username}`;
+        infoItem.innerText = key === 'name' ? 
+        `${USER_INFO[key] || username}`
+        : `${key}: ${USER_INFO[key]}`; 
 
         userInfo.append(infoItem);
-    });
+    };
 
     userCard.classList.add('users_card', 'user');
     userLink.classList.add('user__link');
