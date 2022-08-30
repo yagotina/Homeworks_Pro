@@ -33,7 +33,7 @@ function createCard(user, username) {
     const userInfo = document.createElement('ul');
 
     const USER_INFO = {
-        name: user.name,
+        name: user.name || username,
         Repositories: user.public_repos,
         Followers: user.followers,
         Following: user.following,
@@ -43,8 +43,7 @@ function createCard(user, username) {
         const infoItem = document.createElement('li');
 
         infoItem.innerText = key === 'name' ? 
-        `${USER_INFO[key] || username}`
-        : `${key}: ${USER_INFO[key]}`; 
+        `${USER_INFO[key]}` : `${key}: ${USER_INFO[key]}`; 
 
         userInfo.append(infoItem);
     };
