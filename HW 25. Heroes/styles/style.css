@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('../fonts/Roboto-Bold.ttf');
+    font-weight: 700;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background: #021F3C;
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: fit-content;
+    margin: 0 auto;
+}
+
+.main {
+    font: 18px 'Roboto-Regular';
+    color: #fff;
+}
+
+.main__title {
+    font: 42px 'Roboto-Bold';
+    text-transform: uppercase;
+    background: #E30211;
+    width: fit-content;
+    margin: 0 auto 30px auto;
+    padding: 0 5px;
+    border: 0.5px solid #fff;
+}
+
+.add-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    border-radius: 12px;
+    border: 0.5px solid #fff;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+}
+
+.add-form__input-name,
+.add-form__select-comics {
+    height: 40px;
+    padding: 0 15px;
+    font: inherit;
+    border: none;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.add-form__input-name {
+    width: 250px;
+}
+
+.add-form__select-comics {
+    width: 150px;
+
+}
+
+.add-form__input-name:focus,
+.add-form__select-comics:focus {
+    outline: none;
+}
+
+.check-fav {
+    margin-left: 15px;
+    transform: scale(2);
+    vertical-align: middle;
+}
+
+.add-form__btn {
+    width: 150px;
+    height: 50px;
+    background: #E30211;
+    font: 18px 'Roboto-Bold';
+    color: #fff;
+    border: 0.5px solid #fff;
+    cursor: pointer;
+}
+
+.add-form__btn:hover {
+    box-shadow: 0 0 0 1px #fff;
+}
+
+.heros {
+    width: 90%;
+    margin: 0 auto;
+    display: none;
+}
+
+.show-table {
+    display: table;
+}
+
+.heros th, .heros td {
+    border: 0.5px solid #fff;
+    padding: 10px;
+}
+
+.heros th {
+    font-family: "Roboto-Bold";
+}
+
+.heros tr td:nth-last-child(-n+2) {
+    text-align: center;
+}
+
+.heros input {
+    margin: 0;
+}
+
+.heros__btn {
+    height: 35px;
+    padding: 0 20px;
+    border: none;
+    background: #fff;
+    font: inherit;
+    color: #021F3C;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.heros__btn:hover {
+    background: #E30211;
+    box-shadow: 0 0 0 2px #E30211;
+    color: #fff;
+}

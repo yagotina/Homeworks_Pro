@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Heroes</title>
+</head>
+<body>
+    <div class="wrapper">
+        <main class="main">
+            <div class="container">
+                <h1 class="main__title">Create your own hero!</h1>
+                <form class="add-form" id="addHeroForm">
+                    <label class="add-form__label-name">
+                        Name Surname:
+                        <input class="add-form__input-name" id="inputName" type="text" placeholder="Iron Man" required>
+                    </label>
+                    <label class="add-form__label-comics">
+                        Comics:
+                        <select class="add-form__select-comics" id="selectComics"></select>
+                    </label>
+                    <label class="add-form__label-favourite">
+                        Favourite:
+                        <input class="add-form__input-fav check-fav" id="inputFavourite" type="checkbox">
+                    </label>
+                    <input class="add-form__btn" type="submit" value="Add Hero">
+                </form>
+                <table class="heros" id="herosTable">
+                    <thead>
+                        <tr>
+                            <th>Name Surname</th>
+                            <th>Comics</th>
+                            <th>Favourite</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="herosTbody"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
